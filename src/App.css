@@ -9,6 +9,9 @@ body {
   margin-bottom: 10px;
   background-color: black;
   color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .accordion-title h2 {

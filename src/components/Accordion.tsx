@@ -1,14 +1,15 @@
 import AccordionItem from "./AccordionItem";
-
-const accordionData = {
-    title: 'What is React?',
-    content: 'React is a JavaScript library for building user interfaces.',
-}
+import { accordionData } from "../data/accordionData";
 
 function Accordion() {
-    
+    const accordionItems = accordionData.map((item) => (
+        <AccordionItem key={item.id} title={item.title} content={item.content} />
+    ))
+
     return (
-        <AccordionItem title={accordionData.title} content={accordionData.content} />
+        <div className="accordion">
+            {accordionItems}
+        </div>
     )
 }
 

@@ -1,8 +1,13 @@
 function AccordionItem({ title, content }: { title: string, content: string }) {
+
     return (
-        <div>
-            <h2>{title}</h2>
-            <p>{content}</p>
+        <div className="accordion-item">
+            <div className="accordion-title">
+                <h2>{title}</h2>
+            </div>
+            <div className="accordion-content">
+                <p>{content}</p>
+            </div>
         </div>
     )
 }

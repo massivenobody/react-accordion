@@ -1,0 +1,23 @@
+.accordion-item {
+  margin: 18px;
+}
+
+.accordion-title {
+  border: 1px solid black;
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 10px;
+  background-color: black;
+  color: white;
+}
+
+.accordion-title h2 {
+  font-weight: normal;
+}
+
+.accordion-content {
+  border: 2.5px solid black;
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 10px;
+}

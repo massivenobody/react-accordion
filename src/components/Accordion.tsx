@@ -1,15 +1,15 @@
 import AccordionItem from "./AccordionItem";
-import { accordionData } from "../data/accordionData";
 import { useState } from "react";
+import { AccordionItemData } from "./AccordionItem";
 
-function Accordion() {
+function Accordion({ data }: { data: AccordionItemData[] }) {
     const [activeId, setActiveId] = useState<number | null>(null);
 
     const handleToggle = (id: number) => {
         setActiveId(activeId === id ? null : id);
     }
 
-    const accordionItems = accordionData.map((item) => (
+    const accordionItems = data.map((item) => (
         <AccordionItem
             key={item.id}
             title={item.title}

@@ -1,5 +1,11 @@
 import { ExpandMore, ExpandLess } from "@mui/icons-material";
 
+export interface AccordionItemData {
+    id: number;
+    title: string;
+    content: string;
+}
+
 function AccordionItem({ title, content, isOpen, onToggle }: { title: string, content: string, isOpen: boolean, onToggle: () => void }) {
 
     return (

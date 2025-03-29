@@ -1,10 +1,6 @@
-export interface AccordionItem {
-    id: number;
-    title: string;  
-    content: string;
-}
+import { AccordionItemData } from "../components/AccordionItem";
 
-export const accordionData: AccordionItem[] = [
+export const accordionData: AccordionItemData[] = [
     {
         id: 1,
         title: 'What are the benefits of meditation?',

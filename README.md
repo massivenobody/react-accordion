@@ -1,54 +1,42 @@
-# React + TypeScript + Vite
+# React Accordion
+A simple accordion component built with React and TypeScript.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Introduction
+This project was created to test my skills in building a simple React component with TypeScript.
 
-Currently, two official plugins are available:
+I learned a bit of React back in 2021, but hadn't worked with it since. I decided to get back into frontend development, so I've been working on catching up lately.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I started learning TypeScript the same day I created this project (03/28/2025). I wanted to see if I could build a functional component using my (so far) limited knowledge.
 
-## Expanding the ESLint configuration
+## Features
+- A simple accordion that renders items based on a given dataset:
+  ```ts
+  interface AccordionItemData {
+    id: number;
+    title: string;
+    content: string;
+  }
+  ```
+- The expand/collapse button changes depnding on the state of its item.
+- Only one item can be expanded at a time. Parent `Accordion` component remembers which item is currently open.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## State Management
+This component uses React's built-in `useState` hook to manage its state. The state is used to keep track of which item is currently expanded and only allow one (or none) to be expanded at a time.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Design and Styling
+The component uses a simple and responsive design with black/white colors (`#f5f5f5` used as background to be easier on the eyes).
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The title and expand/collapse button are separated using flexbox.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Future Development
+I'm fairly confident there's many react accordion components out there with undoubtedly a myriad more features, so I'm not really interested in getting this to production ever.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+I might add animations, more advanced styling, or play with different ways of getting the data for the items; but, for now, this satisfies me as a VERY early first project.
+
+## Screenshots
+Here are some screenshots of the accordion in action:
+
+![All items collapsed](public/all-collapsed.png)
+![One item expanded](public/one-expanded.png)
+![Only one item can expand at a time](public/only-one-expanded.gif)
+![On Mobile](public/on-mobile.png)
